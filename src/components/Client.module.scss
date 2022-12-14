@@ -1,0 +1,15 @@
+.client {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  border: 1px solid grey;
+}
+
+.value {
+  font-weight: 500;
+  color: red;
+}
