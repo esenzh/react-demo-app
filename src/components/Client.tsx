@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { useActivateFeature, useFeatureVariable } from "@kameleoon/react-sdk";
+import classNames from "classname";
 import styles from "./Client.module.scss";
 import { FEATURE_REACT_DEMO_APP, VARIABLE_KEY } from "../feature/feature.ts";
 import { TypeUser } from "./types";
@@ -21,7 +22,11 @@ function Client(props: Props): JSX.Element {
       <span>{props.user.email}</span>
       <span>
         Targeted:{" "}
-        <span className={styles["value"]}>{`${isFeatureEnabled}`}</span>
+        <span
+          className={classNames(styles["value"], {
+            [styles["value_green"]]: isFeatureEnabled,
+          })}
+        >{`${isFeatureEnabled}`}</span>
       </span>
       <span>
         Variable: <span className={styles["value"]}>{variable}</span>
